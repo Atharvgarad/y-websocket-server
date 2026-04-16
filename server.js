@@ -14,6 +14,6 @@ wss.on('connection', (ws, req) => {
 })
 
 const port = process.env.PORT || 1234
-server.listen(port, () => {
+server.listen(port, '0.0.0.0', () => {
   console.log(`WebSocket server running on port ${port}`)
 })

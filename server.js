@@ -1,12 +1,16 @@
-const { createServer } = require('http')
+import { createServer } from 'http';
+
 const { setupWSConnection } = require('y-websocket/bin/utils')
 const { WebSocketServer } = require('ws')
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200)
-  res.end('y-websocket server running')
-})
+const server = createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World');
+});
 
+server.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
 const wss = new WebSocket.Server({ server })
 
 wss.on('connection', (ws, req) => {

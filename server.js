@@ -1,6 +1,5 @@
 
 import http from 'http';
-import cors from 'cors';
 import { createServer } from 'http';
 
 const { setupWSConnection } = require('y-websocket/bin/utils')
